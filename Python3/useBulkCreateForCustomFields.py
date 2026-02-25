@@ -1,0 +1,27 @@
+# In newer versions (v1.5) of the api some endpoints like the /member/{userPk}/custom-fields can be used with a bulk-create and bulk-update
+# For further information and to check which endpoints are enabled for the bulk actions see the documentation (https://easyverein.com/api/)
+
+import requests
+
+header={
+    'Authorization': 'Bearer <YOUR-API-KEY>'
+}
+
+data = {
+    'entries': [
+        # Inside the entries list, the entries are nothing more like a normal post/patch body for the specific endpoint
+        {
+            'customField': 53851,
+            'value': 'Linuxmasterrace'
+        },
+        {
+            'customField': 53852,
+            'value': 'I like trains'
+        }
+    ]
+}
+
+# Assuming that the member allready exist
+response = requests.post('https://easyverein.com/api/v1.5/member/5485413/custom-fields/bulk-create', json=data, headers=header)
+
+assert response.status_code == 200
