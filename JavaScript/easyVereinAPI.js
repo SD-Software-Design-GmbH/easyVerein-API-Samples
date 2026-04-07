@@ -17,7 +17,7 @@ const domain = 'easyverein.com'
  */
 export async function getToken (username, password, twoFA = '', forceReload = false, onError = (res) => {}) {
     if (forceReload || response === undefined) {
-        // The user is not allready loged in
+        // The user is not already loged in
         const content = {username: username, password: password, '2FA': twoFA}
         const newResponse = await post('get-token', content, onError)
         

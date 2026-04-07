@@ -14,8 +14,8 @@ user = input("Please enter the member ID: ")
 if is_integer(user):
     # Add a access-token and hand over the delete request to the server
     header={'Authorization': 'Bearer <YOUR-API-KEY>'}
-    req = requests.delete('https://easyverein.com/api/stable/member/' + user + '/', headers=header)
-    print(req.headers)
-    print(req.status_code)
+    request = requests.delete(f'https://easyverein.com/api/stable/member/{user}/', headers=header)
+    print(request.headers)
+    print(request.status_code)
 else:
     print("You gave me a wrong ID")

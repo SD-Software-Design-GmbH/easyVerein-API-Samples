@@ -7,9 +7,9 @@ file = input("Enter the path to a JSON:")
 if file.endswith(".js"):
     try:
         # Try to open the given file, extract the data and check if the given file is a valid json
-        with open(file, 'r') as theJson:
-            rawdata = theJson.read()
-            data = json.loads(rawdata)
+        with open(file, 'r') as json_file_data:
+            raw_data = json_file_data.read()
+            data = json.loads(raw_data)
     except FileNotFoundError:
         print("Don't tell me a lie!")
         quit()
@@ -22,7 +22,7 @@ if file.endswith(".js"):
     # Add a access-token and hand over the json to the server
     print("The given file seems to be valid, doing the transfer...")
     header={'Authorization': 'Bearer <YOUR-API-KEY>'}
-    req = requests.post('https://easyverein.com/api/stable/member/', headers=header, json=data)
-    print(req.status_code)
+    request = requests.post('https://easyverein.com/api/stable/member/', headers=header, json=data)
+    print(request.status_code)
 else:
     print("Well, you need to give me a json!")

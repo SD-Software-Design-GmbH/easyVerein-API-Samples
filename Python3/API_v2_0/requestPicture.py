@@ -2,19 +2,21 @@
 
 import requests
 
-# Get the entries as json from the server
+
 header={
     'Authorization': 'Bearer <YOUR-API-KEY>',
     'Accept': 'application/json, image/*'
 }
+
+# Get the entries as json from the server
 res = requests.get('https://easyverein.com/api/stable/member/', headers=header)
 
 # Extract the first entry of the responded entries
-allEntries = res.json()
-someEntry = allEntries.get('results')[0]
+all_entries = res.json()
+some_entry = all_entries.get('results')[0]
 
 # get the url of the profilePicture
-url = someEntry.get('_profilePicture')
+url = some_entry.get('_profilePicture')
 print(url)
 
 # Get the image
