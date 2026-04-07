@@ -1,6 +1,6 @@
 import requests
 
-# Method to figger out, if the given value is a integer or an integer as a string
+# Method to figure out if the given value is a integer or an integer as a string
 def is_integer(n):
     try:
         float(n)

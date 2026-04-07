@@ -10,7 +10,7 @@ header={'Authorization': 'Bearer <YOUR-API-KEY>'}
 response = requests.get('https://easyverein.com/api/latest/member/', headers=header)
 # NOTE: currently the v2.0 is only available using the hexa.easyverein.com domain. However, this will be changed  back to easyverein.com in the future
 
-token_refresh_needed = response.headers.get('token_refresh_meeded')
+token_refresh_needed = response.headers.get('token_refresh_needed')
 
 if token_refresh_needed:
     # NOTE: `refresh-token` is only available in v2.0 or newer

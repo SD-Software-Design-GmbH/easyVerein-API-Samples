@@ -20,7 +20,7 @@ export async function getToken (username, password, twoFA = '', forceReload = fa
         // The user is not already loged in
         const content = {username: username, password: password, '2FA': twoFA}
         const newResponse = await post('get-token', content, onError)
-        
+
         if (newResponse !== undefined && newResponse.hasOwnProperty('token')) {
             response = newResponse
         }
@@ -30,7 +30,7 @@ export async function getToken (username, password, twoFA = '', forceReload = fa
 
 /**
  * Post to an API endpoint using fetch
- * 
+ *
  * @param {string} endpoint - The endpoint to post to
  * @param {object} content - The content to post
  * @returns {object|any} - An object containing the complete response of the API or anything else if an error occured
@@ -48,14 +48,14 @@ export async function post (endpoint, content, onError = (res) => {}) {
 
 /**
  * Get some entries of any endpoint
- * 
+ *
  * @param {string} endpoint - The endpoint to get
  * @param {number|string} id - Optional: The id of the entry to retrive
  * @param {string} query - Optional: The query to limit the fields that should be get
  * @param {number} limit - Optional: The limit of max etries shown in one page
  * @param {number} page - Optional: The page to get
  * @param {string} params - Optional: More params like seach can be filled here
- * @param {function} onError - Optional: An function that will be called if somthing went wrong 
+ * @param {function} onError - Optional: An function that will be called if somthing went wrong
  * @returns {object|any} - An object containing the complete response of the API or anything else if an error occured
  */
 export async function get (endpoint, id = '', query = '{*}', limit = 20, page = 1, params = '', onError = (res) => {}) {
@@ -70,7 +70,7 @@ export async function get (endpoint, id = '', query = '{*}', limit = 20, page = 
 
 /**
  * Patch some changes to an entry
- * 
+ *
  * @param {string} endpoint - The endpoint to patch to
  * @param {number|string} id - The id of the entry to change
  * @param {object} content - The content to patch
