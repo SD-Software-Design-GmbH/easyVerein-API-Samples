@@ -25,6 +25,6 @@ data = {
 user = input("Please enter the member ID: ")
 
 # Assuming that the member already exist
-response = requests.post(f'https://easyverein.com/api/latest/member/{user}/custom-fields/bulk-create', json=data, headers=header)
+response = requests.post(f'https://easyverein.com/api/v2.0/member/{user}/custom-fields/bulk-create', json=data, headers=header)
 
 assert response.status_code == 200

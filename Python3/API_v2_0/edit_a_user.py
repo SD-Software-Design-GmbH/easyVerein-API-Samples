@@ -31,7 +31,7 @@ if file.endswith(".js") and is_integer(user):
         quit()
     # Add a access-token and hand over the json to the server
     header={'Authorization': 'Bearer <YOUR-API-KEY>'}
-    request = requests.patch(f'https://easyverein.com/api/stable/member/{user}/', headers=header, json=data)
+    request = requests.patch(f'https://easyverein.com/api/v2.0/member/{user}/', headers=header, json=data)
     print(request.headers)
     print(request.status_code)
 elif is_integer(user):

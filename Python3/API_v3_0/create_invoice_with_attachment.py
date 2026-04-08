@@ -12,7 +12,7 @@ data = {
     'is_draft': True # This is needed to patch the file later for the invoice
 }
 
-url = 'https://easyverein.com/api/latest/invoice'
+url = 'https://easyverein.com/api/v3.0/invoice'
 response = requests.post(url, json=data, headers=header)
 invoice_id = response.json().get('id')
 url = f'{url}/{invoice_id}'

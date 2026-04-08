@@ -22,7 +22,7 @@ if file.endswith(".js"):
     # Add a access-token and hand over the json to the server
     print("The given file seems to be valid, doing the transfer...")
     header={'Authorization': 'Bearer <YOUR-API-KEY>'}
-    request = requests.post('https://easyverein.com/api/latest/member/', headers=header, json=data)
+    request = requests.post('https://easyverein.com/api/v3.0/member/', headers=header, json=data)
     print(request.status_code)
 else:
     print("Well, you need to give me a json!")

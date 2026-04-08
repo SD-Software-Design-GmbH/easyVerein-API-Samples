@@ -1,7 +1,7 @@
 {
     // Reference to an entry of the contact-detail endpoint of the API 
     // You can also use just the primary key (integer)
-    "contactDetails": "https://easyverein.com/api/stable/contact-details/64213/",
+    "contactDetails": "https://easyverein.com/api/v2.0/contact-details/64213/",
     "email": "example@software-design.de",
     "_profilePicture": null,
     "joinDate": "2020-09-07T00:00:00.470891+02:00",

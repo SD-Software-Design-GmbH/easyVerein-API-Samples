@@ -9,7 +9,7 @@ header={
 }
 
 # Get the entries as json from the server
-res = requests.get('https://easyverein.com/api/latest/member/', headers=header)
+res = requests.get('https://easyverein.com/api/v3.0/member/', headers=header)
 
 # Extract the first entry of the responded entries
 all_entries = res.json()
