@@ -5,7 +5,7 @@
 
 import requests
 
-# Send a request that is answered by the API with the header attribute `tokenRefreshNeeded` set to True
+# Send a request that is answered by the API with the header attribute `token_refresh_needed` set to True
 header={'Authorization': 'Bearer <YOUR-API-KEY>'}
 response = requests.get('https://easyverein.com/api/v3.0/member/', headers=header)
 

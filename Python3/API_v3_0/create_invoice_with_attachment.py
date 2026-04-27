@@ -19,9 +19,10 @@ url = f'{url}/{invoice_id}'
 
 header['Content-Disposition'] = 'name="file"; filename="file.pdf"'
 
-# The file can be a picture or a pdf
-files = {'path': open('/path/to/your/file.pdf', 'rb+')}
-response = requests.patch(url, files=files, headers=header)
+with open('/path/to/your/file.pdf', 'rb+') as file_to_upload:
+    # The file can be a picture or a pdf
+    files = {'path': file_to_upload}
+    response = requests.patch(url, files=files, headers=header)
 
 # Set the invoice to be no draft - The invoice cannot be changed after this step
 data = {

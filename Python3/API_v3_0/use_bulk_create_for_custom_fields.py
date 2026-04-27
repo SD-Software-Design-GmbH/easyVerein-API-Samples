@@ -24,7 +24,10 @@ data = {
 # First ask the user to enter the id of the user
 user = input("Please enter the member ID: ")
 
-# Assuming that the member already exist
-response = requests.post(f'https://easyverein.com/api/v3.0/member/{user}/custom-fields/bulk-create', json=data, headers=header)
+if user.isdigit():
+    # Assuming that the member already exist
+    response = requests.post(f'https://easyverein.com/api/v3.0/member/{user}/custom-fields/bulk-create', json=data, headers=header)
 
-assert response.status_code == 200
+    assert response.status_code == 200
+else:
+    print("Invalid member ID")

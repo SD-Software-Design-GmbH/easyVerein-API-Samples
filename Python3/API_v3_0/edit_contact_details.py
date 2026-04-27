@@ -1,21 +1,11 @@
 import json
 import requests
 
-# Method to figure out if the given value is a integer or an integer as a string
-def is_integer(n):
-    try:
-        float(n)
-    except ValueError:
-        return False
-    else:
-        return True
-
 # First ask the user to enter a path to a json and the id of the user
 file = input("Enter the path to a JSON: ")
 user = input("Please enter the contact details ID: ")
-if file.endswith(".js") and is_integer(user):
+if file.endswith(".json") and user.isdigit():
     try:
-        # Try to open the given file, extract the data and check if the given file is a valid json
         with open(file, 'r') as json_file_data:
             raw_data = json_file_data.read()
             data = json.loads(raw_data)
@@ -34,7 +24,7 @@ if file.endswith(".js") and is_integer(user):
     request = requests.patch(f'https://easyverein.com/api/v3.0/contact-details/{user}/', headers=header, json=data)
     print(request.headers)
     print(request.status_code)
-elif is_integer(user):
+elif user.isdigit():
     print("Well, you need to give me a json!")
 else:
-    print("You gave me a wrong ID")
+    print("Invalid member ID")

@@ -4,7 +4,7 @@ import requests
 
 # First ask the user to enter a path to a json
 file = input("Enter the path to a JSON:")
-if file.endswith(".js"):
+if file.endswith(".json"):
     try:
         # Try to open the given file, extract the data and check if the given file is a valid json
         with open(file, 'r') as json_file_data:
